@@ -6,7 +6,6 @@
 }
 
 :root {
-    /* Dark Theme (Cyberpunk) */
     --dark-bg: #0a0a0f;
     --dark-primary: #12121f;
     --dark-secondary: #1a1a2e;
@@ -16,8 +15,7 @@
     --neon-pink: #ff00ff;
     --neon-purple: #9d00ff;
     --accent: var(--neon-blue);
-    
-    /* Light Theme */
+
     --light-bg: #f0f2ff;
     --light-primary: #ffffff;
     --light-secondary: #e6e9ff;
@@ -31,7 +29,7 @@ body {
     overflow-x: hidden;
     background-color: var(--dark-bg);
     color: var(--dark-text);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 body.light-theme {
@@ -39,7 +37,6 @@ body.light-theme {
     color: var(--light-text);
 }
 
-/* Theme Variables */
 .dark-theme {
     --bg-color: var(--dark-bg);
     --primary-color: var(--dark-primary);
@@ -72,6 +69,7 @@ body.light-theme {
     z-index: 1000;
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 243, 255, 0.1);
+    transition: background 0.3s;
 }
 
 .light-theme .navbar {
@@ -106,9 +104,12 @@ body.light-theme {
 }
 
 @keyframes neon-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         text-shadow: 0 0 10px currentColor;
     }
+
     50% {
         text-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
     }
@@ -126,7 +127,7 @@ body.light-theme {
     font-weight: 500;
     position: relative;
     padding: 5px 0;
-    transition: color 0.3s ease;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
@@ -141,7 +142,7 @@ body.light-theme {
     width: 0;
     height: 2px;
     background: var(--accent);
-    transition: width 0.3s ease;
+    transition: width 0.3s;
 }
 
 .nav-links a:hover::after {
@@ -163,10 +164,10 @@ body.light-theme {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
     box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
     font-size: 0.9rem;
     white-space: nowrap;
+    transition: all 0.3s;
 }
 
 .theme-toggle-btn:hover {
@@ -182,7 +183,6 @@ body.light-theme {
     font-size: 1.5rem;
     cursor: pointer;
     z-index: 1002;
-    padding: 5px;
 }
 
 /* Hero Section */
@@ -213,8 +213,8 @@ body.light-theme {
 }
 
 .hero-content {
-    animation: fadeInUp 1s ease forwards;
     opacity: 0;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .hero-name {
@@ -234,9 +234,12 @@ body.light-theme {
 }
 
 @keyframes underline-glow {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.3;
     }
+
     50% {
         opacity: 1;
     }
@@ -282,7 +285,7 @@ body.light-theme {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
     z-index: 1;
@@ -304,7 +307,7 @@ body.light-theme {
     width: 100%;
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-    transition: left 0.5s ease;
+    transition: left 0.5s;
 }
 
 .cta-button:hover::before {
@@ -329,10 +332,13 @@ body.light-theme {
 }
 
 @keyframes glow-pulse {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 0.2;
         transform: translate(-50%, -50%) scale(1);
     }
+
     50% {
         opacity: 0.4;
         transform: translate(-50%, -50%) scale(1.1);
@@ -376,7 +382,7 @@ body.light-theme {
     padding: 100px 0;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.8s, transform 0.8s;
 }
 
 .section.visible {
@@ -422,7 +428,7 @@ body.light-theme {
     border-radius: 10px;
     text-align: center;
     border: 1px solid rgba(0, 243, 255, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .light-theme .stat {
@@ -466,7 +472,6 @@ body.light-theme {
     background: rgba(26, 26, 46, 0.5);
     border-radius: 5px;
     overflow: hidden;
-    position: relative;
 }
 
 .light-theme .skill-bar {
@@ -505,7 +510,7 @@ body.light-theme {
     background: var(--secondary-color);
     border-radius: 15px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.3s;
     border: 1px solid rgba(0, 243, 255, 0.1);
 }
 
@@ -517,9 +522,11 @@ body.light-theme {
 
 .project-image {
     position: relative;
-    height: 250px;
-    overflow: hidden;
-    background: rgba(0, 0, 0, 0.1);
+    aspect-ratio: 16 / 9;
+    background: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-wrapper {
@@ -528,8 +535,7 @@ body.light-theme {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.05);
+    padding: 15px;
 }
 
 .project-image img {
@@ -537,27 +543,24 @@ body.light-theme {
     max-height: 100%;
     object-fit: contain;
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
     background: white;
     padding: 10px;
 }
 
 .project-card:hover .project-image img {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 
 .project-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: rgba(0, 0, 0, 0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s;
 }
 
 .project-card:hover .project-overlay {
@@ -575,10 +578,6 @@ body.light-theme {
     padding: 10px 20px;
     border-radius: 25px;
     border: 1px solid var(--accent);
-}
-
-.project-link:hover {
-    background: rgba(0, 243, 255, 0.4);
 }
 
 .project-content {
@@ -605,11 +604,177 @@ body.light-theme {
     font-size: 0.9rem;
 }
 
+/* Work With Me Section */
+.work-subtitle {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.service-card {
+    background: var(--secondary-color);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    border: 1px solid rgba(0, 243, 255, 0.1);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 25px rgba(0, 243, 255, 0.15);
+}
+
+.service-icon {
+    font-size: 2.8rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.price {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin: 10px 0 20px;
+    font-weight: 700;
+}
+
+.service-btn {
+    background: transparent;
+    border: 1.5px solid var(--accent);
+    color: var(--accent);
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: auto;
+}
+
+.service-btn:hover {
+    background: var(--accent);
+    color: #0a0a0f;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.custom-order-wrapper {
+    background: var(--secondary-color);
+    border-radius: 20px;
+    padding: 35px;
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    margin-top: 30px;
+}
+
+.form-heading {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent);
+}
+
+.custom-order-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    width: 100%;
+}
+
+.form-row.double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.custom-order-form input,
+.custom-order-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 243, 255, 0.2);
+    border-radius: 12px;
+    color: var(--text-color);
+    font-family: 'Roboto Mono', monospace;
+    transition: all 0.3s;
+}
+
+.light-theme .custom-order-form input,
+.light-theme .custom-order-form textarea {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.custom-order-form input:focus,
+.custom-order-form textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+}
+
+.form-note {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: -5px 0 5px;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 243, 255, 0.3);
+}
+
+.form-status {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: 500;
+}
+
 /* Vision Section */
 .vision {
     background: linear-gradient(135deg, rgba(157, 0, 255, 0.1), rgba(0, 243, 255, 0.1));
-    position: relative;
-    overflow: hidden;
 }
 
 .vision-slogan {
@@ -619,7 +784,6 @@ body.light-theme {
     margin-bottom: 40px;
     color: var(--accent);
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .vision-features {
@@ -635,7 +799,7 @@ body.light-theme {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     border: 1px solid rgba(0, 243, 255, 0.1);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .light-theme .feature {
@@ -678,8 +842,8 @@ body.light-theme {
     padding: 25px;
     border-radius: 10px;
     text-align: center;
-    transition: all 0.3s ease;
     border: 1px solid rgba(0, 243, 255, 0.1);
+    transition: 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -696,33 +860,20 @@ body.light-theme {
     margin-bottom: 15px;
 }
 
-.certificate h4 {
-    margin: 10px 0 5px;
-    font-size: 1.2rem;
-}
-
-.certificate p {
-    color: var(--text-secondary);
-    margin-bottom: 15px;
-}
-
 .certificate-btn {
-    display: inline-block;
     background: rgba(0, 243, 255, 0.1);
     color: var(--accent);
     padding: 8px 20px;
     border-radius: 25px;
     text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
     border: 1px solid var(--accent);
     margin-top: auto;
+    transition: 0.3s;
 }
 
 .certificate-btn:hover {
     background: var(--accent);
     color: white;
-    transform: translateY(-2px);
 }
 
 /* Contact Section */
@@ -770,7 +921,6 @@ body.light-theme {
     border-radius: 10px;
     color: var(--text-color);
     font-family: 'Roboto Mono', monospace;
-    transition: all 0.3s ease;
 }
 
 .contact-form input:focus,
@@ -778,25 +928,6 @@ body.light-theme {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
-}
-
-.submit-btn {
-    background: linear-gradient(45deg, var(--neon-purple), var(--neon-blue));
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.submit-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 243, 255, 0.3);
 }
 
 .social-links {
@@ -815,7 +946,7 @@ body.light-theme {
     border-radius: 50%;
     color: var(--text-color);
     font-size: 1.2rem;
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 .social-links a:hover {
@@ -849,6 +980,7 @@ body.light-theme {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -856,9 +988,12 @@ body.light-theme {
 }
 
 @keyframes scan {
-    0%, 100% {
+
+    0%,
+    100% {
         top: 0;
     }
+
     50% {
         top: 100%;
     }
@@ -868,6 +1003,7 @@ body.light-theme {
     0% {
         transform: translateX(-100%);
     }
+
     100% {
         transform: translateX(100%);
     }
@@ -879,15 +1015,15 @@ body.light-theme {
         grid-template-columns: 1fr;
         text-align: center;
     }
-    
+
     .about-content {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -898,48 +1034,46 @@ body.light-theme {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 80px 20px 20px;
-        transition: right 0.3s ease;
+        padding: 80px 20px;
+        transition: right 0.3s;
         z-index: 1001;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .nav-links li {
         width: 100%;
         text-align: center;
     }
-    
+
     .nav-links a {
         display: block;
         padding: 15px;
         font-size: 1.2rem;
     }
-    
+
     .menu-toggle {
         display: block;
         order: 3;
     }
-    
+
     .theme-toggle-btn {
         order: 2;
         padding: 10px;
         border-radius: 50%;
         width: 40px;
         height: 40px;
-        display: flex;
-        align-items: center;
         justify-content: center;
         margin-right: 10px;
     }
-    
+
     .theme-text {
         display: none;
     }
-    
+
     .nav-right {
         gap: 10px;
     }
@@ -949,51 +1083,38 @@ body.light-theme {
     .title {
         font-size: 2.5rem;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .vision-slogan {
         font-size: 1.5rem;
     }
-    
-    .project-image {
-        height: 200px;
+
+    .form-row.double {
+        grid-template-columns: 1fr;
     }
-    
-    .hero {
-        padding-top: 100px;
+
+    .project-image {
+        aspect-ratio: 4/3;
     }
 }
 
 @media (max-width: 480px) {
-    .hero {
-        padding-top: 100px;
-    }
-    
     .title {
         font-size: 2rem;
     }
-    
+
     .professional-title {
         font-size: 1.2rem;
     }
-    
-    .cta-button {
-        padding: 12px 30px;
-        font-size: 0.9rem;
-    }
-    
+
     .section {
         padding: 60px 0;
     }
-    
+
     .nav-links {
         width: 85%;
-    }
-    
-    .logo {
-        font-size: 1.5rem;
     }
 }
